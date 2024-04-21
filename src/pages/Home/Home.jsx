@@ -1,0 +1,23 @@
+import Slider from '../../components/Slider/Slider';
+import './Home.css'
+
+
+const Home = () => {
+    return (
+        <div className="mt ">
+           <div className="banner">
+           <div className='banner-left'>
+            <h1 className = "banner-header">Erasmus Mundus Association - Bangladesh</h1>
+            <p>EMA us tge Erasmus Mundus Students and Alumni Association. EMA was founded in 2008 ans id registered as an AISBL non-profit organization. Our aims are to help EMJMD students and alumni promote higher education, and be a go-to network for our Alumni across the world.</p>
+            <button className='btn-blue'>Contact Us</button>
+           </div>
+           <div className='banner-slider'>
+             <Slider/>
+           </div>
+           </div>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae eius incidunt, nemo voluptates magnam consequuntur deserunt temporibus atque similique quaerat pariatur quidem optio, doloremque placeat iure maiores sed quisquam odit hic excepturi laboriosam voluptatem? Unde nam dolores iure eum ullam maxime tempore nostrum quo, repellendus libero molestiae perferendis asperiores illo ipsam, hic magni officia saepe quasi consectetur eos alias quas iste doloremque numquam. Quas sed nisi minus ea! Saepe consectetur obcaecati repudiandae corrupti quod at similique qui, modi excepturi id, totam rerum perspiciatis, error eos praesentium consequatur illo. Fugit placeat atque tempore accusamus voluptatum error maxime temporibus excepturi. Unde, ipsum laboriosam. Blanditiis natus ipsam consequuntur saepe architecto, in recusandae eligendi accusantium voluptatibus autem! Autem sunt dolores fuga error. Ad enim beatae voluptas sunt accusantium magni blanditiis voluptatum amet similique quam asperiores consequuntur nesciunt quas eius aspernatur, nam architecto quae ea tenetur assumenda veniam debitis. Totam deleniti nam quasi alias quos at doloribus consectetur reiciendis tenetur voluptates ab voluptatem id magnam excepturi sit, quas, non maiores eum eius tempore. Corporis nisi at quis illo, sit necessitatibus porro! Doloribus error laborum nobis sunt saepe mollitia veritatis, alias corrupti? Eos eum nihil quidem totam voluptatem blanditiis aspernatur tenetur aut. Natus suscipit eveniet quam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nulla facilis esse doloribus sit deserunt hic nesciunt quis blanditiis assumenda porro possimus at nobis aut incidunt laudantium architecto ad recusandae dolorum, debitis, excepturi, beatae perspiciatis nihil placeat. Recusandae soluta sint illum fugit fugiat quaerat accusamus iste ratione officia ipsa pariatur, repudiandae alias magnam dolore amet similique asperiores, esse consequatur ea, facere laboriosam numquam nisi voluptates. Quia, eos molestias atque provident porro sit labore commodi alias reiciendis eligendi eaque est accusamus? Excepturi aliquam qui veniam natus ea modi, atque vero quam esse nesciunt, voluptate tenetur nihil! Perspiciatis architecto, quibusdam, molestiae eaque illum aliquam sed at animi, harum odio laborum itaque aut et magnam. Ipsum sint numquam nulla, ex quibusdam odit suscipit aperiam dolorem deleniti blanditiis non nesciunt totam dolorum voluptatum iste iure! Distinctio praesentium earum labore. Quasi sequi culpa porro aliquam sunt esse adipisci voluptas accusamus voluptates numquam sit architecto nam qui nemo nobis commodi, magnam modi inventore unde doloremque aliquid voluptatibus soluta vitae corrupti. Voluptatibus, corrupti quas delectus exercitationem mollitia perspiciatis excepturi quae voluptas quibusdam, aliquam expedita quasi obcaecati, pariatur laboriosam ullam asperiores! Quidem illo quia libero nam ullam quo sequi sint harum reprehenderit provident blanditiis deserunt, natus inventore mollitia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate inventore hic cumque aliquid recusandae! Maiores optio enim quaerat, quos laudantium vitae quod architecto et inventore dolore accusamus natus ipsa neque sed suscipit adipisci ea nisi expedita nostrum temporibus! Deserunt tenetur voluptatum voluptatibus eaque illo aut hic facere iure, fuga excepturi enim molestias sit dolore sint similique illum saepe laboriosam dolorum fugit doloribus facilis velit dignissimos adipisci? Officiis minus unde nulla odio deleniti voluptatem suscipit repellat eaque dolore modi, quis, quae quisquam voluptatum, ipsam amet vel. Suscipit fuga ducimus eos, enim repellat nihil modi totam deleniti blanditiis, ex a, alias sequi!</p>
+        </div>
+    );
+};
+
+export default Home;

@@ -1,0 +1,21 @@
+.banner{
+    display: flex;
+    margin: 0 10%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.banner-left{
+    width: 40%;
+}
+.banner-left p {
+    text-align: justify;
+}
+.banner-header{
+    font-size: 3em;
+    color: #162b56;
+}
+.banner-slider{
+    width: 50%;
+}
