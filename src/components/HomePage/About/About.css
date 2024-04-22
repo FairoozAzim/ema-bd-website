@@ -1,0 +1,31 @@
+.about-section{
+    margin: 0 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-gallery{
+    width: 60%;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    column-gap: 0;
+    row-gap: 15px;
+}
+.grid-item {
+    width: 250px;
+    height: 150px;
+    transition: transform .2s;
+}
+.grid-item img {
+    width: 100%; /* Ensures images fill their grid cells */
+    height: 100%;
+    object-fit: cover; /* Maintains aspect ratio and crops if necessary */
+  }
+  .grid-item:hover{
+    transform: scale(1.2);
+    border: 3px solid #c23911;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+.about-right{
+    width: 40%;
+}

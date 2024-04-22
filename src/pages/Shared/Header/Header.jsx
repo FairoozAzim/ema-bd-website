@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../Assets/EMA BD LOGO.png'
 import './Header.css'
 
@@ -10,13 +11,13 @@ const Header = () => {
         </div>
       <div className="nav">
         <ul className="nav-list">
-          <li className="nav-item montserrat"><a href="#">Home</a></li>
-          <li className="nav-item montserrat"><a href="#">About Us</a></li>
-          <li className="nav-item montserrat"><a href="#">Our Team</a></li>
-          <li className="nav-item montserrat"><a href="#">Student and Alumni</a></li>
-          <li className="nav-item montserrat"><a href="#">Events</a></li>
-          <li className="nav-item montserrat"><a href="#">Blog</a></li>
-          <li className="nav-item montserrat"><a href="#">Contact</a></li>
+          <li className="nav-item montserrat"><Link to = '/'>Home</Link></li>
+          <li className="nav-item montserrat"><Link to='about'>About Us</Link></li>
+          <li className="nav-item montserrat"><Link to='team'>Our Team</Link></li>
+          <li className="nav-item montserrat"><Link to='alumni'>Student and Alumni</Link></li>
+          <li className="nav-item montserrat"><Link to='events'>Events</Link></li>
+          <li className="nav-item montserrat"><Link to='blogs'>Blog</Link></li>
+          <li className="nav-item montserrat"><Link to='contacts'>Contact</Link></li>
         </ul>
       </div>
        </div>
