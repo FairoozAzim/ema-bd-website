@@ -17,7 +17,7 @@ const Header = () => {
           <li className="nav-item montserrat"><Link to='alumni'>Student and Alumni</Link></li>
           <li className="nav-item montserrat"><Link to='events'>Events</Link></li>
           <li className="nav-item montserrat"><Link to='blogs'>Blog</Link></li>
-          <li className="nav-item montserrat"><Link to='contacts'>Contact</Link></li>
+          <li className="nav-item montserrat"><Link to='contact'>Contact</Link></li>
         </ul>
       </div>
        </div>

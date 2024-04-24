@@ -1,0 +1,11 @@
+.alumnus-grid{
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    color: rgb(121, 121, 121);
+}
+
+.team-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}

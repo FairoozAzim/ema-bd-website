@@ -4,3 +4,7 @@
     justify-content: center;
     text-align: center;
 }
+.btn-red a{
+    color: #fff;
+    text-decoration: none;
+}

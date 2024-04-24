@@ -1,0 +1,21 @@
+.event-card{
+    width: 70%;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 12px;
+}
+.event-details{
+    width: 50%;
+}
+.poster{
+    width: 20%;
+    height: 80%;
+}
+.poster img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}

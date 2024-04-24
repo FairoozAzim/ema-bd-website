@@ -113,17 +113,17 @@ const Team = () => {
               </div>
            </div>
            <div className='grid-container'>
-           <div className='team-grid'>
-             {
-                teamArray.map((member, index) => (
-                   <Profile
-                     key={index}
-                     url = {member.url}
-                     name = {member.name}
-                     position = {member.position}
-                   /> 
-                )) }
-           </div>
+              <div className='team-grid'>
+                {
+                   teamArray.map((member, index) => (
+                      <Profile
+                        key={index}
+                        url = {member.url}
+                        name = {member.name}
+                        position = {member.position}
+                      /> 
+                   )) }
+              </div>
            </div>
         </div>
     </div>

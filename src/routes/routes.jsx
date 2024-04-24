@@ -5,6 +5,17 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home";
 import Team from "../pages/Team/Team";
 import ErrorPage from "../pages/Error/Error";
+import Alumni from "../pages/Alumni/Alumni";
+import Contact from "../pages/Contact/Contact";
+import Events from "../pages/Events/Events";
+import EventDetails from "../components/EventsPage/EventDetails";
+import AboutPage from "../pages/AboutPage/AboutPage";
+import Blogs from "../pages/Blogs/Blogs";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import EventManagement from "../components/AdminComponents/EventManagement/EventManagement";
+import BlogManagement from "../components/AdminComponents/BlogManagement/BlogManagement";
+import AdminHome from "../components/AdminComponents/AdminHome/AdminHome";
+// import EventDetails from "../components/EventsPage/EventDetails";
 
 
   export const router = createBrowserRouter([
@@ -18,12 +29,59 @@ import ErrorPage from "../pages/Error/Error";
             element: <Home></Home>
         },
         {
-          path: "team",
+            path: "/about",
+            element: <AboutPage></AboutPage>
+        },
+        {
+          path: "/team",
           element: <Team></Team>
-        }
-       
+        },
+        {
+          path: "/alumni",
+          element: <Alumni></Alumni>
+        },       
+        {
+          path: "/contact",
+          element: <Contact></Contact>
+        },       
+        {
+          path: "/blogs",
+          element: <Blogs></Blogs>
+        },       
+        {
+          path: "/events",
+          element: <Events></Events>
+        },   
+        {
+          path: "/events/:eventId",
+          element: <EventDetails></EventDetails>
+        }    
       ],
     
+    },
+    {
+      path: '/dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+
+        {
+          path: '/dashboard',
+          element: <AdminHome></AdminHome>
+        },
+        {
+          path: '/dashboard/adminHome',
+          element: <AdminHome></AdminHome>
+        },
+        {
+          path: 'manageEvents',
+          element: <EventManagement></EventManagement>
+        },
+        {
+          path: 'manageBlogs',
+          element: <BlogManagement></BlogManagement>
+        },
+
+      ]
     }
    
   ]);
