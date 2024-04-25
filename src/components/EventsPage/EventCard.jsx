@@ -13,7 +13,6 @@ const EventCard = ({event_details}) => {
             <div className='event-details'>
               <span>{event_details.date} @ {event_details.time}</span>
               <h3>{event_details.title}</h3>
-              <span>{event_details.organizer}</span>
               <p>{description}</p>
              <Link to = {`/events/${event_details.id}`} className='link-text'>View Details</Link>
             </div>

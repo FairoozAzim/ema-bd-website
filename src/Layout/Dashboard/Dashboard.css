@@ -29,6 +29,10 @@
     margin-top: 55px;
   }
 .sidebar ul li{
+    list-style: none;
+
+}
+.sidebar ul li a{
     padding: 15px;
     height: 20px;
     margin: 15px auto;
@@ -40,12 +44,21 @@
     border-bottom-left-radius: 30px;
     cursor: pointer;
 }
+.sidebar ul li a.active{
+    background-color: aliceblue;
+    color:#162b56;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+
 .icon{
     margin-right: 10px;
 }
 
-.sidebar ul li:hover{
+.sidebar ul li:hover a{ 
     background-color: aliceblue;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 .sidebar ul li:hover a{
     color: #162b56;
@@ -76,9 +89,14 @@
   pointer-events: none;
 }
 
+.divider{
+    width: 100%;
+    margin-left: -12%;
+    margin-top: 20%;
+}
 /* ==============dashboard contents===========================*/
 .contents{
     width: calc(100vw - 20%);
-    margin-left: 25%;
+    margin-left: 20%;
     padding: 10px
 }

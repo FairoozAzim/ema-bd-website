@@ -1,18 +1,48 @@
+.banner-wrapper{
+    background-color: var(--light-blue-color);
+    height: calc(100vh - 110px);
+    margin-top: 50px;
+    padding: 5%;
+
+}
+
 .banner{
     display: flex;
-    margin: 0 10%;
+    margin: 5% 0;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--navy-blue-color);
+    padding: 5%;
+    border-radius: 15px 80px 80px 5px;
+    margin-left: -10px;
+}
+.banner-header{
+    color:aliceblue !important;
+    text-align: left !important;
 }
 
 .banner-left{
-    width: 40%;
+    width: 50%;
+   
 }
 .banner-left p {
     text-align: justify;
+    color: #c5c5c5;
 }
 
 .banner-slider{
-    width: 50%;
+    width: 40%;
+    height: 60vh;
+    border: 1px solid red;
+}
+.img-frame{
+    width: 80%;
+    height: 100%
+}
+.banner-slider img{
+    min-width: 100%;
+   width: 100%;
+   height: 100%;
+
 }
 

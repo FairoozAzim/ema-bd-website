@@ -1,6 +1,7 @@
 import { useState} from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css'
+import Accordion from '../../components/Accordion/Accordion';
 
 
 const Contact = () => {
@@ -46,9 +47,18 @@ const Contact = () => {
 
     return (
         <div className="mt">
+           <div>
+             <h1 className='section-header text-center'>Frequently Asked Questions</h1>
+             <Accordion title="What is Lorem Ipsum?" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus et magna sodales consectetur."></Accordion>
+             <Accordion title="Why do we use it?" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus et magna sodales consectetur."></Accordion>
+             <Accordion title="Where does it come from?" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus et magna sodales consectetur."></Accordion>
+             <Accordion title="How can I use it?" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod purus et magna sodales consectetur."></Accordion>
+           </div>
+
+
             <div className="contact-header">
                 <h1 className="section-header text-center montserrat">Contact EMA-BD</h1>
-                <p className="text-center">If you have any questions, please check the <i>Frequently Asked Questions </i> page first. If you can&#39;t, contact us by filling the form below. We will try to get back as soon as possible! </p>
+                <p className="text-center">If you have any questions, please check the <i>Frequently Asked Questions </i> first. If you can&#39;t, contact us by filling the form below. We will try to get back as soon as possible! </p>
             </div>
             <div className='contact-form mt-5'>
             <form  onSubmit={sendEmail}>

@@ -1,15 +1,20 @@
 body{
   background-color: #162b560c;
   margin: 0;
+  overflow-x: hidden ;
 }
 
+:root{
+  --navy-blue-color : #162b56;
+  --light-blue-color: #E9F6FF;
+}
 /* ============Shared styles============  */
 .montserrat{
   font-family: "Montserrat", sans-serif
 }
 .section-header{
   font-size: 3em;
-  color: #162b56;
+  color: var(--navy-blue-color);
   text-align: center;
 }
 .mt{
