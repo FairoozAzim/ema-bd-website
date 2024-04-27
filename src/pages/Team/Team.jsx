@@ -7,11 +7,11 @@ import PM3 from '../../Assets/members/PM_faysal_ahmed.jpg'
 import AS1 from '../../Assets/members/Ans_ CR_Fahmida Yeasmin.jpg'
 import AS2 from '../../Assets/members/Ans_Mazharul Islam Sajeeb.jpg'
 import As3 from '../../Assets/members/Ans_Sohana Alam Mim.jpg'
-import IT1 from '../../Assets/members/PM_faysal_ahmed.jpg'
+import IT1 from '../../Assets/members/IT_CR_Sadad_Mahmud.png'
 import IT2 from '../../Assets/members/IT_Abdur_Rahman.jpg'
 import IT3 from '../../Assets/members/IT_Fairooz_Azim.jpg'
-import CR1 from '../../Assets/members/PM_CR_Md Imran Hossain.jpg'
-import CR2 from '../../Assets/members/PM_CR_Md Imran Hossain.jpg'
+import CR1 from '../../Assets/members/CR_Baker.jpg'
+import CR2 from '../../Assets/members/Deputy_CR_Mahamudul_Hasan_Mredul.jpg'
 import PnD1 from '../../Assets/members/PnD_Arghya_Kamol_Roy.jpg'
 import PnD2 from '../../Assets/members/PnD_Samsoon_Nahar_Shampa.jpg'
 import './Team.css'
@@ -94,7 +94,7 @@ const teamArray = [
 
 const Team = () => {
     return (
-        <div className="mt">
+        <div className="mt ">
         <h1 className="section-header text-center">Our Team (2024)</h1>
 
         <div className="team-gallery">

@@ -5,6 +5,8 @@ import { FaHome } from "react-icons/fa";
 import { GrNotes } from "react-icons/gr";
 import { MdDashboard, MdEvent } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
+import { RiTeamLine } from "react-icons/ri";
+import { PiStudentFill } from "react-icons/pi";
 
 const Dashboard = () => {
     return (
@@ -24,6 +26,16 @@ const Dashboard = () => {
                  <li className="menu-item"><NavLink to='/dashboard/manageBlogs'>
                  <GrNotes className="icon"/>
                     Blogs
+                    </NavLink>
+                 </li>
+                 <li className="menu-item"><NavLink to='/dashboard/manageMembers'>
+                 <RiTeamLine className="icon"/>
+                     Members
+                    </NavLink>
+                 </li>
+                 <li className="menu-item"><NavLink to='/dashboard/manageAlumni'>
+                 <PiStudentFill className="icon"/>
+                    Students and Alumni
                     </NavLink>
                  </li>
                  <li className="menu-item"><NavLink to='/dashboard/logout'>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Events.css';
 
-const EventCard = ({event_details}) => {
+const EventCard = ({event_details, img}) => {
    
     let description = event_details.description
     if(description && description.length > 50){
@@ -17,7 +17,7 @@ const EventCard = ({event_details}) => {
              <Link to = {`/events/${event_details.id}`} className='link-text'>View Details</Link>
             </div>
             <div className='poster'>
-              <img src={event_details.url}/>
+              <img src={img}/>
             </div>
         </div>
     );

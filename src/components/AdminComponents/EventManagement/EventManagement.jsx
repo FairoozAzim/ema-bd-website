@@ -1,9 +1,9 @@
 import { MdDelete } from 'react-icons/md';
-import ev1 from '../../../Assets/images/event1.png';
-import ev2 from '../../../Assets/images/event2.jpg';
+// import ev1 from '../../../Assets/images/event1.png';
+// import ev2 from '../../../Assets/images/event2.jpg';
 
 import './EventManagement.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../../Modal/Modal';
 const EventManagement = () => {
     
@@ -17,41 +17,54 @@ const closeModal = () => {
   setIsOpen(false);
 };
 
-    const events = [
-        {
-          id: 1,
-          date: '6 March',
-          link: '#',
-          title: 'A ROAD TO ERASMUS MUNDUS MASTER DEGREE AND ERASMUS SCHOLARSHIP',
-          time: '3:00 pm - 5:00 pm',
-          url: ev1
-        },
-        {
-          id: 2,
-          date: '25 February',
-          link: '#',
-          title: 'MIST Event',
-          time: '4:00 pm - 5:00 pm',
-          url : ev2
-        },
-        {
-          id: 3,
-          date: '4 February',
-          link: '#',
-          title: 'Erasmus Mundus Association - Bangladesh (EMA-BD) presents Symposium series 2023',
-          description: 'This event aims to increase Bangladeshi participation in Erasmus Mundus Masters programs. We are a voluntary organization working tirelessly to achieve this goal.',
-          time: '10:00 am - 12:00 pm',
-          url: ev1
-        },
-        {
-          id: 4,
-          date: '15 January',
-          link: '#',
-          title: 'Workshop on Writing Strong Applications for Erasmus Mundus Scholarships',
-          time: '10:00 am - 12:00 pm',
-          url : ev2
-        },
-      ];
+ const [events, setEvents] = useState([]);
+
+ useEffect(() =>{
+   fetch('http://localhost:5000/events')
+   .then(res => res.json())
+   .then(data => setEvents(data));
+
+ }, [])
+
+ const handleAddEvent = event => {
+  event.preventDefault();
+  const form = event.target;
+  const title = form.title.value;
+  const date = form.date.value;
+  const link = form.link.value;
+  const desc = form.eventDesc.value;
+  const newEvent = {title, date, link, desc};
+  console.log(newEvent);
+  fetch("http://localhost:5000/events", {
+    method: 'POST',
+    headers:{
+     'content-type': 'application/json'
+    },
+    body: JSON.stringify(newEvent)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('post response', data);
+    const addNewEvent = [...events, data];
+    setEvents[addNewEvent];
+    setIsOpen(false);
+    form.reset();
+
+  })
+ }
+
+ const handleDeleteEvent = id =>{
+   console.log(id);
+   fetch(`http://localhost:5000/events/${id}`,{
+    method: 'DELETE'
+   } )
+   .then(res => res.json())
+   .then(data => {
+    console.log(data);
+    setEvents[data];
+   })
+ }
+
     return (
         <div>
             <div className='d-flex event-header'>
@@ -63,13 +76,12 @@ const closeModal = () => {
             <button className='create-btn btn-red event-btn' onClick={openModal}>Create an Event</button>
             <Modal isOpen={isOpen} onClose={closeModal}>
                    <h3 className='text-center'>Create an Event</h3>
-                   <form className='create-form'>
+                   <form className='create-form' onSubmit={handleAddEvent}>
                      <div className='form-content'>
-                      <input type='text' placeholder='Event Title'></input>
-                      <input type='text' placeholder='Event Date'></input>
-                      <input type='text' placeholder='Event Link'></input>
-                      <input type='text' placeholder='Event Poster'></input>
-                      <textarea type='text' placeholder='Description' rows={10}></textarea>
+                      <input name='title' type='text' placeholder='Event Title'></input>
+                      <input name='date' type='text' placeholder='Event Date'></input>
+                      <input name='link' type='text' placeholder='Event Link'></input>
+                      <textarea name='eventDesc' type='text' placeholder='Description' rows={10}></textarea>
                       <button className='submit btn-submit' type='submit'>Submit</button>
                      </div>
                      
@@ -93,7 +105,8 @@ const closeModal = () => {
                         <tr key={event.id}>
                             <td>{event.title}</td>
                             <td>{event.date}</td>
-                            <td className='text-center'><MdDelete /></td>
+                            <td className='text-center'>
+                              <button className='delete-btn' onClick={() => handleDeleteEvent(event.id)}><MdDelete /></button></td>
                         </tr>
                         
                     )

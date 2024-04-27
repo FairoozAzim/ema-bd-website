@@ -6,20 +6,28 @@ import './About.css'
 
 const About = () => {
     return (
-      <div className='mt'>
+      <div className='mt about-wrapper'>
         <div className="d-flex about-section">
             <div className="logo-gallery">
              <div className='grid-item'>
+                <a href="https://www.em-a.eu/membership">
              <img src={logo1}></img>
+             </a>
              </div>
               <div className='grid-item' >
+                <a href="https://www.em-a.eu/">
               <img src={logo2}></img>
+              </a>
               </div>
               <div className='grid-item'>
+                <a href='https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en'>
               <img src={logo3}></img>
+              </a>
               </div>
               <div className='grid-item'>
+              <a href='https://marie-sklodowska-curie-actions.ec.europa.eu/'>
               <img  src={logo4}></img>
+             </a>
               </div>
             </div>
             <div className='about-right'>

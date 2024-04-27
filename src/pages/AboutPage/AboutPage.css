@@ -4,3 +4,10 @@
     margin: 0 auto;
     text-align: justify;
 }
+.about-slider{
+    /* height: 50vh; */
+    margin: 0 auto;
+    padding: 5%;
+    background-color: #fff;
+
+}

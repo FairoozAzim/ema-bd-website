@@ -1,21 +1,21 @@
-import Image1 from '../../Assets/images/Slider1.jpg'
-import Image2 from '../../Assets/images/Slider2.jpg'
-import Image3 from '../../Assets/images/Slider3.jpg'
+import Image1 from '../../Assets/members/Pres.jpg'
+import Image2 from '../../Assets/members/CR_Baker.jpg'
+import Image3 from '../../Assets/members/Deputy_CR_Mahamudul_Hasan_Mredul.jpg'
 
 export default [
         {
             title: "First Slide",
-            description: "this is the first image",
+            text: "EMA-BD is dedicated to work towards helping the incoming students and alumni.",
             url: Image1
         },
         {
             title: "Second Slide",
-            description: "this is the second image",
+            text: "EMA-BD is dedicated to work towards helping the incoming students and alumni.",
             url: Image2
         },
         {
             title: "Third Slide",
-            description: "this is the third image",
+            text: "EMA-BD is dedicated to work towards helping the incoming students and alumni.",
             url: Image3
         }
     

@@ -1,13 +1,88 @@
 .blogs-wrapper{
     margin: 10px;
-    padding: 10px;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 .blog-item{
     background-color: #fff;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
+    height: 400px;
 }
 .blog-item p {
     color: rgb(96, 96, 96);
+}
+.latest-post{
+    background : var(--light-blue-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 110px;
+    padding: 5%;
+}
+
+.blog-img{
+    width: 30%;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   
+}
+.blog-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.blog-desc{
+    width: 50%;
+}
+.blog-desc h1{
+    font-size: 60px;
+}
+.blog-desc .btn-red{
+   margin-bottom: 5px;
+   border-radius: 2px;  
+   font-weight: bold;
+}
+.blog-section span{
+    color: rgb(82, 82, 82);
+    font-weight: bold;
+    display: block;
+}
+.blog-card-img{
+    width: 100%;
+    height: 50%;
+   
+}
+.blog-card-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.blog-item .btn-red{
+    height: 25px;
+    text-align: center;
+    margin-top: 5px ;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.blog-divider{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 10%; */
+}
+.blog-search-container{
+    justify-content: space-between;
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
 }

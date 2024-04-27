@@ -15,6 +15,10 @@ import Dashboard from "../Layout/Dashboard/Dashboard";
 import EventManagement from "../components/AdminComponents/EventManagement/EventManagement";
 import BlogManagement from "../components/AdminComponents/BlogManagement/BlogManagement";
 import AdminHome from "../components/AdminComponents/AdminHome/AdminHome";
+import Faq from "../pages/FAQ/Faq";
+import Login from "../pages/Login/Login";
+import MemberManagement from "../components/AdminComponents/MemberManagement/MemberManagement";
+import AlumniManagement from "../components/AdminComponents/AlumniManagement/AlumniManagement";
 // import EventDetails from "../components/EventsPage/EventDetails";
 
 
@@ -50,12 +54,25 @@ import AdminHome from "../components/AdminComponents/AdminHome/AdminHome";
         },       
         {
           path: "/events",
-          element: <Events></Events>
+          element: <Events></Events>,
+          loader: () => fetch('http://localhost:5000/events')
         },   
         {
           path: "/events/:eventId",
-          element: <EventDetails></EventDetails>
-        }    
+          element: <EventDetails></EventDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/events/${params.eventId}`)
+        } ,
+        {
+          path: "/faq",
+          element: <Faq></Faq>
+        } ,
+
+        { 
+          path: "/login",
+          element: <Login></Login>
+
+        }
+
       ],
     
     },
@@ -79,6 +96,14 @@ import AdminHome from "../components/AdminComponents/AdminHome/AdminHome";
         {
           path: 'manageBlogs',
           element: <BlogManagement></BlogManagement>
+        },
+        {
+          path: 'manageMembers',
+          element: <MemberManagement></MemberManagement>
+        },
+        {
+          path: 'manageAlumni',
+          element: <AlumniManagement></AlumniManagement>
         },
 
       ]

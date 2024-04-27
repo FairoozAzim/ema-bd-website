@@ -54,3 +54,8 @@
     justify-content: space-between;
     width: 100%;
   }
+  .delete-btn{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
