@@ -1,4 +1,4 @@
-1. npm install
-2.npm install react-router-dom localforage match-sorter sort-by
-3.npm install --save @emailjs/browser
-npm install react-icons --save
+1. install node, npm
+2. npm install
+3. npm audit fix - incase of issues after running command 2
+4. npm run dev
