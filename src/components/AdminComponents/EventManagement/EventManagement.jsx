@@ -91,7 +91,7 @@ const closeModal = () => {
            
             <div className='event-wrapper'>
             <h2 className='text-center'>Past Events</h2>
-            <table>
+            <table className='event-table'>
             <thead>
                     <tr>
                        <td>Event Title</td>

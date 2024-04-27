@@ -31,3 +31,18 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+
+@media screen and (max-width: 968px) {
+    .team-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 546px) {
+    .leaders-row{
+        flex-direction: column;
+    }
+    .team-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

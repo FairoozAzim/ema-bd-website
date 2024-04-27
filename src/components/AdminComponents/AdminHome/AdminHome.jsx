@@ -1,3 +1,4 @@
+import './AdminHome.css';
 
 const AdminHome = () => {
     return (

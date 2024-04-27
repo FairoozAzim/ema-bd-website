@@ -57,3 +57,24 @@
 .hide{
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    .event-card{
+        height: 400px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 10px;
+    }
+  
+    .poster{
+        width: 80%;
+        height: 40%;
+    }
+    .poster img{
+        border-radius: 10px;
+    }
+    .event-details{
+        width: 80%;
+    }
+}

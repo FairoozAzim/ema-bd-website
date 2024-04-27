@@ -19,6 +19,8 @@ import Faq from "../pages/FAQ/Faq";
 import Login from "../pages/Login/Login";
 import MemberManagement from "../components/AdminComponents/MemberManagement/MemberManagement";
 import AlumniManagement from "../components/AdminComponents/AlumniManagement/AlumniManagement";
+import TermsCOnditions from "../pages/TermsConditions/TermsCOnditions";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 // import EventDetails from "../components/EventsPage/EventDetails";
 
 
@@ -71,7 +73,24 @@ import AlumniManagement from "../components/AdminComponents/AlumniManagement/Alu
           path: "/login",
           element: <Login></Login>
 
-        }
+        },
+
+        { 
+          path: "/logout",
+          element: <Login></Login>
+
+        },
+
+        { 
+          path: "/terms",
+          element: <TermsCOnditions/>
+
+        },
+        { 
+          path: "/privacy",
+          element:  <PrivacyPolicy></PrivacyPolicy>
+
+        },
 
       ],
     
@@ -104,6 +123,10 @@ import AlumniManagement from "../components/AdminComponents/AlumniManagement/Alu
         {
           path: 'manageAlumni',
           element: <AlumniManagement></AlumniManagement>
+        },
+        {
+          path: 'logout',
+          element: <AdminHome></AdminHome>
         },
 
       ]

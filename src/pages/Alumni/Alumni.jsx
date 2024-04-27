@@ -3,7 +3,7 @@ import Profile from '../../components/Profile/Profile';
 import './Alumni.css'
 
 const alumniList = []
-for (let i=0; i<4;i++)
+for (let i=0; i<5;i++)
 {
     alumniList.push({url:Avatar,name: "John Doe", Subject: "EMJM ABC"})
 }

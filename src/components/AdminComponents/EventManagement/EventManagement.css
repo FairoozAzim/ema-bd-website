@@ -5,11 +5,13 @@
     width: 90%;
     height: auto;
     margin: 5% auto;
+    overflow-x:auto;
 }
 
 .event-wrapper table {
     width: 100%;
     border-collapse: collapse;
+  
 }
 
 .event-wrapper table thead{

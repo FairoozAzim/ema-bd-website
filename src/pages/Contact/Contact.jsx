@@ -58,7 +58,7 @@ const Contact = () => {
             <form  onSubmit={sendEmail}>
               <div className='d-flex input-wrapper'>
              
-              <div>
+              <div className='contact-left'>
                 <input 
                 name='first_name'
                 type='text' 
@@ -81,17 +81,19 @@ const Contact = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </div>
-              <div>
+              <div className='contact-right'>
                 <textarea 
                 name='message' 
                 placeholder='Type your message' 
-                rows={11} cols={50}
+                rows={11} cols={70}
                 value={message} 
                 onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
               </div>
+            <div className='submit-div'>
             <button className='btn-submit text-center' type='submit'>Send</button>
+            </div>
             </form>
             </div>
            

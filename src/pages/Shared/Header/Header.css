@@ -24,6 +24,7 @@
   /* Logo styles */
   .logo {
     width: 15%;
+
     
   }
   
@@ -135,11 +136,20 @@
     background-color: #fff;
     color: #000;
    }
+   .logo {
+    width: 35%;
+    
+  }
   }
 
   @media screen and (max-width: 425px){
     .nav.menu-show{
       display: block;
       width: 80%;
+    }
+    .logo {
+      width: 40%;
+  
+      
     }
   }
