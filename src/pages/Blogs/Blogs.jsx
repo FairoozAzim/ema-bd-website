@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import blogImg from '../../Assets/images/event1.png';
+import blogImg from '../../Assets/images/event3.jpg';
 import './Blogs.css'
 
 const Blogs = () => {
@@ -7,11 +7,11 @@ const Blogs = () => {
   const blogLists =[
     {
       "id": 1,
-      "title": "Exploring the Benefits of Erasmus Mundus Program",
-      "author": "John Doe",
-      "date": "2024-04-20",
+      "title": "Information session on Erasmus+ Opportunities",
+      "author": "Sadad Mahamud",
+      "date": "2023-09-11",
       "blog_url": blogImg,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae elit eget neque tincidunt eleifend. Vivamus id arcu sem. Cras vel nisi vitae ligula volutpat gravida. Donec efficitur massa eu nisi lacinia placerat. Fusce suscipit quam quis diam faucibus, ac feugiat dui tempor. Ut et ex eget odio vulputate commodo vel sit amet nunc. Integer laoreet posuere mi id vestibulum. Donec fringilla leo sed nunc maximus, eu bibendum sapien dapibus."
+      "content": "The European Union Bangladesh (EUD) organised an info session on the international dimension of the Erasmus+ programme, targeting higher education institutions and in particular newcomers."
     },
     {
       "id": 2,
