@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './BlogManagement.css'
 import Modal from '../../Modal/Modal';
+import { MdOutlineFileUpload } from 'react-icons/md';
+import BlogCard from '../../../pages/Blogs/BlogCard';
 
 const BlogManagement = () => {
 
 const [isOpen, setIsOpen] = useState(false);
+const [blogs, setBlogs] = useState([]);
+const [blogImage, setBlogImage] = useState([]);
+const [image, setImage] = useState(null);
+const today = new Date();
+const time = today.toTimeString();
+const date = today.toDateString();
 
   const openModal = () => {
     setIsOpen(true);
@@ -13,37 +21,60 @@ const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {
     setIsOpen(false);
   };
+ 
+  useEffect(() =>{
+    fetch('http://localhost:5000/blogs')
+    .then(res => res.json())
+    .then(data => setBlogs(data));
+ 
+  }, [])
 
-    const blogLists =[
-        {
-          "id": 1,
-          "title": "Exploring the Benefits of Erasmus Mundus Program",
-          "author": "John Doe",
-          "date": "2024-04-20",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae elit eget neque tincidunt eleifend. Vivamus id arcu sem. Cras vel nisi vitae ligula volutpat gravida. Donec efficitur massa eu nisi lacinia placerat. Fusce suscipit quam quis diam faucibus, ac feugiat dui tempor. Ut et ex eget odio vulputate commodo vel sit amet nunc. Integer laoreet posuere mi id vestibulum. Donec fringilla leo sed nunc maximus, eu bibendum sapien dapibus."
-        },
-        {
-          "id": 2,
-          "title": "Erasmus Mundus Bangladesh Association's Cultural Exchange Event",
-          "author": "Jane Smith",
-          "date": "2024-04-15",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae elit eget neque tincidunt eleifend. Vivamus id arcu sem. Cras vel nisi vitae ligula volutpat gravida. Donec efficitur massa eu nisi lacinia placerat. Fusce suscipit quam quis diam faucibus, ac feugiat dui tempor. Ut et ex eget odio vulputate commodo vel sit amet nunc. Integer laoreet posuere mi id vestibulum. Donec fringilla leo sed nunc maximus, eu bibendum sapien dapibus."
-        },
-        {
-          "id": 3,
-          "title": "Tips for Applying to Erasmus Mundus Scholarships",
-          "author": "Alice Johnson",
-          "date": "2024-04-10",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae elit eget neque tincidunt eleifend. Vivamus id arcu sem. Cras vel nisi vitae ligula volutpat gravida. Donec efficitur massa eu nisi lacinia placerat. Fusce suscipit quam quis diam faucibus, ac feugiat dui tempor. Ut et ex eget odio vulputate commodo vel sit amet nunc. Integer laoreet posuere mi id vestibulum. Donec fringilla leo sed nunc maximus, eu bibendum sapien dapibus."
-        },
-        {
-          "id": 4,
-          "title": "Erasmus Mundus Bangladesh Association's Annual Conference Highlights",
-          "author": "Michael Brown",
-          "date": "2024-04-05",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae elit eget neque tincidunt eleifend. Vivamus id arcu sem. Cras vel nisi vitae ligula volutpat gravida. Donec efficitur massa eu nisi lacinia placerat. Fusce suscipit quam quis diam faucibus, ac feugiat dui tempor. Ut et ex eget odio vulputate commodo vel sit amet nunc. Integer laoreet posuere mi id vestibulum. Donec fringilla leo sed nunc maximus, eu bibendum sapien dapibus."
-        }
-      ]
+  const handleImageUpload = event => {
+    console.log(event.target.files);
+    setImage(URL.createObjectURL(event.target.files[0]));
+    setBlogImage(event.target.files[0]);
+    console.log(image);
+  }
+  
+ const handleAddBlog = event => {
+  event.preventDefault();
+  let formData = new FormData()
+  const form = event.target;
+  formData.append("title",form.title.value);
+  formData.append("author",form.authorName.value);
+  formData.append("date",  date);
+  formData.append("time", time);
+  formData.append("text", form.blogText.value);
+  formData.append("blogImage",blogImage);
+
+  const title = form.title.value;
+  const author = form.authorName.value;
+  const postDate = date;
+  const postTime = time;
+  const text =form.blogText.value ;
+  const newBlog= {title, author, postDate, postTime, text};
+  // formData.append("banner", fileName);
+  
+
+  console.log(newBlog);
+  fetch("http://localhost:5000/blogs", {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('post response', data);
+    alert(data.message);
+    const addNewBlog = [...blogs, data];
+    setBlogs[addNewBlog];
+    setImage(null);
+    form.reset();
+    setIsOpen(false);
+  })
+ }
+
+  
+
     return (
         <div>
             <h2 className="text-center">Manage Blogs</h2>
@@ -55,11 +86,29 @@ const [isOpen, setIsOpen] = useState(false);
                 </div>
                 <Modal isOpen={isOpen} onClose={closeModal}>
                    <h3 className='text-center'>Create a Blog</h3>
-                   <form className='create-form'>
+                   <form className='create-form' onSubmit={handleAddBlog}>
                      <div className='form-content'>
-                      <input type='text' placeholder='Blog Title'></input>
-                      <input type='text' placeholder='Author Name'></input>
-                      <textarea type='text' placeholder='Write your thoughts' rows={20}></textarea>
+                      <input name='title' type='text' placeholder='Blog Title'></input>
+                      <input name='authorName' type='text' placeholder='Author Name'></input>
+                      <div className='image-input-container'>
+                      <input name='blogImage' type='file' id='blogImage' className='event-banner' placeholder='Blog Image' hidden onChange={handleImageUpload}
+                     ></input>
+                    
+                    {
+                      image ?
+                      <div className='banner-img-container'>
+                      <img className='banner-img' src={image} accept="image/*"></img>
+                      <button className='delete-img' onClick={() => setImage(null)}>Clear Image</button>
+                      </div>
+                      : 
+                      <label className='banner-label' htmlFor='blogImage'>
+                       <MdOutlineFileUpload className='icon'/>
+                      Choose an Image from files</label>
+                     
+                    }
+                    
+                    </div>
+                      <textarea name='blogText' type='text' placeholder='Write your thoughts' rows={20}></textarea>
                       <button className='submit btn-submit' type='submit'>Submit</button>
                      </div>
                      
@@ -67,14 +116,11 @@ const [isOpen, setIsOpen] = useState(false);
                  </Modal>
                 <div className="blogs-wrapper">
             {
-              blogLists.map(blog => (
-                <div className="blog-item" key={blog.id}>
-                  <h3>{blog.title}</h3>
-                   <span>{blog.author}</span>
-                   <span>{blog.date}</span>
-                   <p>{blog.content}</p>
-                  
-                </div>
+              blogs.map(blog => (
+                <BlogCard 
+                key= {blog._id}
+                blog = {blog}
+                ></BlogCard>
               ))
             }
             </div>

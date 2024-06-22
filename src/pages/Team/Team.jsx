@@ -1,123 +1,43 @@
-import PR1 from '../../Assets/members/PR_CR_Tahmida_Shamsuddin.jpeg'
-import PR2 from '../../Assets/members/PR_Fahim_Tahmid.jpg'
-import PR3 from '../../Assets/members/PR_SHARIF_MUTASIM_BILLAH.jpg'
-import PM1 from '../../Assets/members/PM_CR_Md Imran Hossain.jpg'
-import PM2 from '../../Assets/members/PM_Abu_Touhid_Hossain.jpg'
-import PM3 from '../../Assets/members/PM_faysal_ahmed.jpg'
-import AS1 from '../../Assets/members/Ans_ CR_Fahmida Yeasmin.jpg'
-import AS2 from '../../Assets/members/Ans_Mazharul Islam Sajeeb.jpg'
-import As3 from '../../Assets/members/Ans_Sohana Alam Mim.jpg'
-import IT1 from '../../Assets/members/IT_CR_Sadad_Mahmud.png'
-import IT2 from '../../Assets/members/IT_Abdur_Rahman.jpg'
-import IT3 from '../../Assets/members/IT_Fairooz_Azim.jpg'
-import CR1 from '../../Assets/members/CR_Baker.jpg'
-import CR2 from '../../Assets/members/Deputy_CR_Mahamudul_Hasan_Mredul.jpg'
-import PnD1 from '../../Assets/members/PnD_Arghya_Kamol_Roy.jpg'
-import PnD2 from '../../Assets/members/PnD_Samsoon_Nahar_Shampa.jpg'
-import './Team.css'
 import Profile from '../../components/Profile/Profile'
+import { useLoaderData } from 'react-router-dom'
+import './Team.css'
 
-const teamArray = [
-    {
-        url: PM1,
-        name: "Md Imran Hossain",
-        position: "Coordinator of Event and Project Management"
-    },
-
-    {
-        url: PnD1,
-        name: "Arghya Kamol Roy",
-        position: "Coordinator of Planning and Development"
-    },
-
-      {
-        url: IT1,
-        name: "Sadad Mahamud",
-        position: "Coordinator of IT and Social Media"
-      },
-      {
-        url: PR1,
-        name: "Tahmida Shamsuddin",
-        position: "Coordinator of Public Relation and Students"
-      },
-      {
-        url: AS1,
-        name: "Fahmida Yeasmin",
-        position: "Coordinator of Alumni and Students"
-      },
-      {
-        url: PM3,
-        name: "M FAYSAL AHMED",
-        position: "Deputy Coordinators of Event and Project Management"
-      },
-      {
-        url: PnD2,
-        name: "Samsoon Nahar Shampa",
-        position: "Deputy Coordinator of Planning and Development"
-      },
-      {
-        url: IT3,
-        name: "Fairooz Azim",
-        position: "Deputy Coordinator of IT and Social Media"
-      },
-      {
-        url: PR3,
-        name: "Sharif Mutasim Billah",
-        position: "Deputy Coordinator of Public Relation"
-      },
-      {
-        url:  As3,
-        name: "Sohana Alam Mim",
-        position: "Deputy Coordinator of Alumni and Students"
-      },
-      {
-        url: PM2,
-        name: "Abu Touhid Hossain",
-        position: "Deputy Coordinator of Event and Project Management"
-      },
-      {
-        url: IT2,
-        name: "Md Abdur Rahman",
-        position: "Deputy Coordinator of IT and Social Media"
-      },
-      {
-        url: PR2,
-        name: "Sk Fahim Tahmid Boni",
-        position: "Deputy Coordinator of Public Relation"
-      },
-      {
-        url:  AS2,
-        name: "Mazharul Islam Sajeeb",
-        position: "Deputy Coordinator of Alumni and Students"
-      },
-]
 
 const Team = () => {
+ 
+   const team = useLoaderData();
+   const teamArray = team.slice(2);
+   const leadArray = team.slice(0,2);
+   
+   
     return (
-        <div className="mt ">
+        <div className="mt">
         <h1 className="section-header text-center">Our Team (2024)</h1>
 
         <div className="team-gallery">
            <div className="leaders">
               <div className="d-flex leaders-row">
-                <Profile 
-                  url = {CR1}
-                  name = "Sayed Muhammad Baker"
-                  position = 'Country Representative'
+              {
+                 leadArray.map((lead, index) => (
+                  <Profile 
+                  key = {index}
+                  url = {lead.url}
+                  name = {lead.name}
+                  position = {lead.position}
                 />
-                <Profile 
-                  url = {CR2}
-                  name = "Md Mahmudul Hasan Mredul"
-                  position = 'Deputy Country Representative'
-                />
+    ))}
+               
               </div>
            </div>
            <div className='grid-container'>
               <div className='team-grid'>
                 {
-                   teamArray.map((member, index) => (
+                   teamArray.slice(2).map((member, index) => (
                       <Profile
                         key={index}
+                        api= {member}
+                        id = {member._id}
+                        profile={member.linkedIn}
                         url = {member.url}
                         name = {member.name}
                         position = {member.position}

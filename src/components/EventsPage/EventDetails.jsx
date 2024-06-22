@@ -2,8 +2,9 @@ import { Link, useLoaderData } from "react-router-dom";
 import ev1 from '../../Assets/images/event1.png';
 
 const EventDetails = () => {
-    const responseData = useLoaderData();
+   const responseData = useLoaderData();
    const eventData = responseData.filtered_data;
+   console.log(eventData);
    const prevId = responseData.prev_id;
    const nextId = responseData.next_id;
    console.log(responseData);

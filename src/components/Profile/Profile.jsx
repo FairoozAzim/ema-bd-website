@@ -1,13 +1,23 @@
+import { FaLinkedinIn } from "react-icons/fa";
 import './Profile.css'
+import { Link } from "react-router-dom";
 
-const Profile = ({url, name, position}) => {
+const Profile = ({api, id, profile, url, name, position}) => {
+   
     return (
         <div className="gallery-item">
             <div className='item-img'>
-              <img src={url}></img>
+              <img src={`http://localhost:5000/uploads/${url}`}></img>
+              <div className='view-details'>
+               <a href={profile} className='details-link'><FaLinkedinIn></FaLinkedinIn></a>
             </div>
+            </div>
+            
+
             <p className='item-name'>{name}</p>
-            <p className='item-pos'>{position}</p>
+            <small className='item-pos'>{position}</small>
+            <Link to = {`/${api}/${id}`} className='details-btn'>View Details</Link>
+
          </div>
     );
 };

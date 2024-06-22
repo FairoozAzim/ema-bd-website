@@ -7,6 +7,7 @@ body{
 :root{
   --navy-blue-color : #162b56;
   --light-blue-color: #E9F6FF;
+  --orange-color: #c23911;
   --shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
 }
 /* ============Shared styles============  */

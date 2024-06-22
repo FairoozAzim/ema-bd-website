@@ -72,7 +72,7 @@ const Blogs = () => {
 
             </div>
           </div>
-          <div className='blog-search-container d-flex mt-10'>
+          <div className='blog-search-container d-flex'>
             <h2>Read More Blogs</h2>
             <div className='search-blogs'>
               <p>Search Blogs</p>
@@ -93,7 +93,7 @@ const Blogs = () => {
                    <p>{blog.content.slice(0,50)} ...</p>
                    <span>{blog.date}</span>
                    
-                   <button className='btn-red'><Link to ={`/blogs/${blog.id}`}>Read More</Link></button>
+                   <button className='btn-red'><Link to ={`/blogs/${blog._id}`}>Read More</Link></button>
                 </div>
               ))
             }

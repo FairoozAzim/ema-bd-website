@@ -61,3 +61,88 @@
     border: none;
     cursor: pointer;
   }
+  .image-input-container{
+    display: flex;
+    width: 80%;
+    border: 2px dashed rgb(146, 146, 146);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    height: 170px;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner-img-container{
+    width: 100%;
+    height: 100%;
+  }
+  .banner-img{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+  .delete-img{
+    float: right;
+    cursor: pointer;
+    background-color: var(--navy-blue-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 15px;
+  }
+  .create-form input[type="file"]{
+
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+  }
+  .banner-label{
+    cursor: pointer !important;
+    color: #757575;
+    border: 3px solid #757575;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .banner-label:hover{
+    background-color: #757575;
+    color: #fff;
+  }
+  .double-input{
+    width: 82%;
+    gap: 5%;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .double-input input{
+    width: 100% !important;
+    margin: 0 !important
+   
+  }
+  .react-datepicker-wrapper{
+    display: block !important;
+    width: 80% !important;
+    position: relative;
+  }
+  .react-datepicker-wrapper input:focus{
+    margin: 0 !important;
+    /* display: block !important;
+    width: 100% !important; */
+    /* border: 2px solid blue;
+    outline: none; */
+    /* padding: 0 !important; */
+  }
+  .react-datepicker__input-container{
+    display: block !important;
+    width: 95% !important;
+    /* border: 1px solid red;
+    width: 100% !important; */
+  }
+  /* .react-datepicker__input-container input{
+    display: block !important;
+    width: 100% !important;
+  } */

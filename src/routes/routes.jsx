@@ -21,6 +21,8 @@ import MemberManagement from "../components/AdminComponents/MemberManagement/Mem
 import AlumniManagement from "../components/AdminComponents/AlumniManagement/AlumniManagement";
 import TermsCOnditions from "../pages/TermsConditions/TermsCOnditions";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
+import ProtectedRoute from "./ProtectedRoute";
+import BlogDetails from "../pages/Blogs/BlogDetails";
 // import EventDetails from "../components/EventsPage/EventDetails";
 
 
@@ -40,11 +42,13 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
         },
         {
           path: "/team",
-          element: <Team></Team>
+          element: <Team></Team>,
+          loader: () => fetch('http://localhost:5000/members')
         },
         {
           path: "/alumni",
-          element: <Alumni></Alumni>
+          element: <Alumni></Alumni>,
+          loader: () => fetch('http://localhost:5000/alumni')
         },       
         {
           path: "/contact",
@@ -53,6 +57,11 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
         {
           path: "/blogs",
           element: <Blogs></Blogs>
+        },       
+        {
+          path: "/blogs/:blogId",
+          element: <BlogDetails></BlogDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.blogId}`)
         },       
         {
           path: "/events",
@@ -97,7 +106,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
     },
     {
       path: '/dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <ProtectedRoute> <Dashboard></Dashboard></ProtectedRoute>,
       children: [
 
         {
