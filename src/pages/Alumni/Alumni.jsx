@@ -12,10 +12,10 @@ import Pagination from '../../components/Pagination/Pagination';
 
 const Alumni = () => {
   const alumni = useLoaderData(); // Assuming this provides your alumni data
-  console.log(alumni)
+  // console.log(alumni)
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10); // Number of items to display per page
+  const [itemsPerPage] = useState(9); // Number of items to display per page
 
   // Calculate index of the first and last item of current page
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -41,6 +41,7 @@ const Alumni = () => {
       </div>
       {/* Pagination controls */}
       <Pagination
+        
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
         totalItems={alumni.length}

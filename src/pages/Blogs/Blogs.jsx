@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import blogImg from '../../Assets/images/event3.jpg';
 import './Blogs.css'
 
 const Blogs = () => {
-
+  const blogs=  useLoaderData()
+  console.log(blogs)
   const blogLists =[
     {
       "id": 1,

@@ -28,6 +28,7 @@ import BlogDetails from "../pages/Blogs/BlogDetails";
 
   export const router = createBrowserRouter([
     {
+      //https://emabd.org/api/
       path: "/",
       element: <Main></Main>,
       errorElement: <ErrorPage></ErrorPage>,
@@ -56,7 +57,8 @@ import BlogDetails from "../pages/Blogs/BlogDetails";
         },       
         {
           path: "/blogs",
-          element: <Blogs></Blogs>
+          element: <Blogs></Blogs>,
+          loader: () => fetch('http://localhost:5000/blogs')
         },       
         {
           path: "/blogs/:blogId",

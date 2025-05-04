@@ -7,6 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 const Events = () => {
 
 const events = useLoaderData();
+console.log(events)
 
     return (
         <div className='mt'>

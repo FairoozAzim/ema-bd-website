@@ -6,7 +6,7 @@ import './About.css'
 
 const About = () => {
     return (
-      <div className='mt about-wrapper'>
+      <div className='mt-10 about-wrapper'>
         <div className="d-flex about-section">
             <div className="logo-gallery">
              <div className='grid-item'>
